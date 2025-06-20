@@ -1,0 +1,150 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> Simbolo_inicial
+Rule 1     Simbolo_inicial -> NUMERO_DECIMAL ROMANO FIN_ENTRADA
+Rule 2     Simbolo_inicial -> NUMERO_DECIMAL BINARIO FIN_ENTRADA
+Rule 3     Simbolo_inicial -> NUMERO_DECIMAL OCTAL FIN_ENTRADA
+Rule 4     Simbolo_inicial -> NUMERO_DECIMAL HEXADECIMAL FIN_ENTRADA
+Rule 5     Simbolo_inicial -> NUMERO_DECIMAL PALABRA FIN_ENTRADA
+Rule 6     Simbolo_inicial -> NUMERO_DECIMAL ALEATORIO FIN_ENTRADA
+
+Terminals, with rules where they appear
+
+ALEATORIO            : 6
+BINARIO              : 2
+FIN_ENTRADA          : 1 2 3 4 5 6
+HEXADECIMAL          : 4
+NUMERO_DECIMAL       : 1 2 3 4 5 6
+OCTAL                : 3
+PALABRA              : 5
+ROMANO               : 1
+error                : 
+
+Nonterminals, with rules where they appear
+
+Simbolo_inicial      : 0
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . Simbolo_inicial
+    (1) Simbolo_inicial -> . NUMERO_DECIMAL ROMANO FIN_ENTRADA
+    (2) Simbolo_inicial -> . NUMERO_DECIMAL BINARIO FIN_ENTRADA
+    (3) Simbolo_inicial -> . NUMERO_DECIMAL OCTAL FIN_ENTRADA
+    (4) Simbolo_inicial -> . NUMERO_DECIMAL HEXADECIMAL FIN_ENTRADA
+    (5) Simbolo_inicial -> . NUMERO_DECIMAL PALABRA FIN_ENTRADA
+    (6) Simbolo_inicial -> . NUMERO_DECIMAL ALEATORIO FIN_ENTRADA
+
+    NUMERO_DECIMAL  shift and go to state 2
+
+    Simbolo_inicial                shift and go to state 1
+
+state 1
+
+    (0) S' -> Simbolo_inicial .
+
+
+
+state 2
+
+    (1) Simbolo_inicial -> NUMERO_DECIMAL . ROMANO FIN_ENTRADA
+    (2) Simbolo_inicial -> NUMERO_DECIMAL . BINARIO FIN_ENTRADA
+    (3) Simbolo_inicial -> NUMERO_DECIMAL . OCTAL FIN_ENTRADA
+    (4) Simbolo_inicial -> NUMERO_DECIMAL . HEXADECIMAL FIN_ENTRADA
+    (5) Simbolo_inicial -> NUMERO_DECIMAL . PALABRA FIN_ENTRADA
+    (6) Simbolo_inicial -> NUMERO_DECIMAL . ALEATORIO FIN_ENTRADA
+
+    ROMANO          shift and go to state 3
+    BINARIO         shift and go to state 4
+    OCTAL           shift and go to state 5
+    HEXADECIMAL     shift and go to state 6
+    PALABRA         shift and go to state 7
+    ALEATORIO       shift and go to state 8
+
+
+state 3
+
+    (1) Simbolo_inicial -> NUMERO_DECIMAL ROMANO . FIN_ENTRADA
+
+    FIN_ENTRADA     shift and go to state 9
+
+
+state 4
+
+    (2) Simbolo_inicial -> NUMERO_DECIMAL BINARIO . FIN_ENTRADA
+
+    FIN_ENTRADA     shift and go to state 10
+
+
+state 5
+
+    (3) Simbolo_inicial -> NUMERO_DECIMAL OCTAL . FIN_ENTRADA
+
+    FIN_ENTRADA     shift and go to state 11
+
+
+state 6
+
+    (4) Simbolo_inicial -> NUMERO_DECIMAL HEXADECIMAL . FIN_ENTRADA
+
+    FIN_ENTRADA     shift and go to state 12
+
+
+state 7
+
+    (5) Simbolo_inicial -> NUMERO_DECIMAL PALABRA . FIN_ENTRADA
+
+    FIN_ENTRADA     shift and go to state 13
+
+
+state 8
+
+    (6) Simbolo_inicial -> NUMERO_DECIMAL ALEATORIO . FIN_ENTRADA
+
+    FIN_ENTRADA     shift and go to state 14
+
+
+state 9
+
+    (1) Simbolo_inicial -> NUMERO_DECIMAL ROMANO FIN_ENTRADA .
+
+    $end            reduce using rule 1 (Simbolo_inicial -> NUMERO_DECIMAL ROMANO FIN_ENTRADA .)
+
+
+state 10
+
+    (2) Simbolo_inicial -> NUMERO_DECIMAL BINARIO FIN_ENTRADA .
+
+    $end            reduce using rule 2 (Simbolo_inicial -> NUMERO_DECIMAL BINARIO FIN_ENTRADA .)
+
+
+state 11
+
+    (3) Simbolo_inicial -> NUMERO_DECIMAL OCTAL FIN_ENTRADA .
+
+    $end            reduce using rule 3 (Simbolo_inicial -> NUMERO_DECIMAL OCTAL FIN_ENTRADA .)
+
+
+state 12
+
+    (4) Simbolo_inicial -> NUMERO_DECIMAL HEXADECIMAL FIN_ENTRADA .
+
+    $end            reduce using rule 4 (Simbolo_inicial -> NUMERO_DECIMAL HEXADECIMAL FIN_ENTRADA .)
+
+
+state 13
+
+    (5) Simbolo_inicial -> NUMERO_DECIMAL PALABRA FIN_ENTRADA .
+
+    $end            reduce using rule 5 (Simbolo_inicial -> NUMERO_DECIMAL PALABRA FIN_ENTRADA .)
+
+
+state 14
+
+    (6) Simbolo_inicial -> NUMERO_DECIMAL ALEATORIO FIN_ENTRADA .
+
+    $end            reduce using rule 6 (Simbolo_inicial -> NUMERO_DECIMAL ALEATORIO FIN_ENTRADA .)
+
